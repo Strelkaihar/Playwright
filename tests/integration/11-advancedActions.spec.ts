@@ -74,7 +74,7 @@ test.describe("Advanced user Actions", async () => {
    * Validate the value attribute for the search input box is "TECHGLOBALTECHGLOBAL"
    */
 
-  test.only("Test Case 2", async ({ page }) => {
+  test("Test Case 2", async ({ page }) => {
     const inputBox = page.locator("#input_box");
     await inputBox.focus();
 
