@@ -19,7 +19,6 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
 
-  testIgnore: ['**/authState.spec.ts', '**/useAuthState.spec.ts'],
   snapshotDir: './snapshot',
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
@@ -44,6 +43,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: ['test/setup/*.ts', 'test/integration/16-useAuthState.spec.ts'],
     },
 
     // {
